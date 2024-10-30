@@ -1,0 +1,152 @@
+header{  
+    justify-content: space-between;  
+    align-items: center; 
+    padding: 20px 20px;    
+}
+
+header button{
+    width: 130px;
+    height: 35px;               
+    background-color: transparent;         
+    background-image: url('./icones/sair.png');
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    border: none; 
+    cursor: pointer; 
+    float: right;
+}
+
+.container{
+  display: grid;
+}
+
+.adicionar{
+  background-color: #fff;
+  width: 40%;
+  padding: 30px;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.tarefas{
+  background-color: #fff;
+  height: 300px;
+  width: 40%;
+  padding: 30px;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+/*Estilização da parte superior da lista*/
+.componentes{
+  position: relative;
+}
+.adicionar h1{
+  font-size: 4vh;
+}
+
+.adicionar input{
+  border: 2px solid #C2D5DB;
+  border-radius: 7px;
+  padding: 12px;
+  height: 25px;
+  width: 70%;
+  margin-right: 3%;
+  font-size: 2.5vh;
+  color: #757678;
+  outline: none;
+}
+
+.adicionar button{
+  padding: 12px;
+  width: 80px;
+  background-color: #0032A8;
+  border: none;
+  border-radius: 7px;
+  font-size: 2.5vh;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*Estilização da parte inferior da lista*/
+.tarefas header{
+  width: 100%;
+  position: relative;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.switch{
+  display: flex;
+  align-items: center;
+  color: #757678;
+  float: right;
+  font-size: 2.1vh;
+}
+
+.slider{
+  margin-left: 13px;
+}
+
+/* Estilo do input conluidas */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+
+  /*Estilização do button de concluidas*/
+
+  /* Esconde o checkbox */
+.switch > .hidden-toggle {
+  display: none;
+}
+
+  /* Caixinha onde o botão desliza */
+.switch > .slider {
+    background: #757678;
+    border: none;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: all 300ms ease-in-out;
+    width: 4rem;
+    height: 2rem;
+    position: relative;
+  }
+  
+  /* O botão redondinho */
+  .switch > .slider > .button {
+    content: "";
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #fff;
+    top: 0.25rem;
+    left: 0.4rem;
+    transition: all 300ms ease-in-out;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  /* Slider ON */
+  .switch > .hidden-toggle:checked ~ .slider {
+    background: #0032A8;
+    box-shadow: inset 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2),
+      0 0 1rem rgba(50, 0, 150, 0.2);
+  }
+  
+  /* Botão ON */
+  .switch > .hidden-toggle:checked ~ .slider > .button {
+    left: 2rem;
+    background: #fff;
+  }
