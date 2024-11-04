@@ -1,3 +1,8 @@
+body {
+  background-color: #c7d7df;
+  font-family: Arial, sans-serif;
+}
+
 header{  
     justify-content: space-between;  
     align-items: center; 
@@ -63,7 +68,7 @@ header button{
   height: 25px;
   width: 70%;
   margin-right: 3%;
-  font-size: 2.5vh;
+  font-size: 2.5vh; 
   color: #757678;
   outline: none;
 }
@@ -80,6 +85,26 @@ header button{
 }
 
 /*Estilização da parte inferior da lista*/
+
+/*Barra de rolagem dos itens da lista*/
+.tarefas{
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.tarefas::-webkit-scrollbar{
+  width: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.tarefas::-webkit-scrollbar-thumb{
+  background-color: #0032A8;
+  border-radius: 10px;
+
+}
+/*-----------*/
+
 .tarefas header{
   width: 100%;
   position: relative;
@@ -102,7 +127,6 @@ header button{
 /* Estilo do input conluidas */
 .completed {
     text-decoration: line-through;
-    color: gray;
   }
 
   /*Estilização do button de concluidas*/
@@ -150,3 +174,108 @@ header button{
     left: 2rem;
     background: #fff;
   }
+
+  .botoes {
+    display: flex;
+    gap: 8px;
+    }
+
+  .editar{
+    background-color: #0032A8;
+    background-image: url('./icones/editar.png');
+    color: #fff;
+    padding: 17px 20px;
+    border: none;
+    border-radius: 10px;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  .excluir{
+    background-color: #CA0404;
+    background-image: url('./icones/excluir.png');
+    color: #fff;
+    padding: 17px 20px;
+    border: none;
+    border-radius: 10px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+/* Esconde a checkbox original */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkmark {
+  width: 3px; /* Largura da checkbox */
+  height: 7px; /* Altura da checkbox */
+  padding: 17px 20px;
+  border: none;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: center;
+  background-color: #757678;
+  background-image: url('./icones/feito.png');
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-color: #4CAF50;
+  background-image: url('./icones/feito.png');
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul span{
+  margin-left: 7%;
+  color: #757678;
+  font-size: 2.5vh;
+
+}
+
+.tarefa-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  gap: 15px;
+  border-bottom: 3px solid #e0e0e0;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.edicao-tarefa {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+
+.edicao-tarefa input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #c2d5db;
+  border-radius: 5px;
+}
+
+.edicao-tarefa button {
+  padding: 8px;
+  background-color: #0032A8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

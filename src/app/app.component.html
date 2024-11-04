@@ -27,22 +27,26 @@
     <ul>
       <li *ngFor="let item of filteredItems; let i = index">
         <!-- Div de edição da tarefa -->
-        <div *ngIf="editIndex === i; else viewMode">
-          <input [(ngModel)]="editingItem" placeholder="Editar tarefa">
-          <button (click)="saveTarefa(i)">Salvar</button>
-        </div>
-  
+        <div class="tarefa-item">
+          <div *ngIf="editIndex === i; else viewMode" class="edicao-tarefa">
+            <input [(ngModel)]="editingItem" placeholder="Editar tarefa">
+            <button (click)="saveTarefa(i)">Salvar</button>
+          </div>
+
         <!-- Visualização da tarefa com riscado ao marcar como concluída -->
         <ng-template #viewMode>
           <span [class.completed]="item.completed">{{ item.text }}</span> <!-- Texto da tarefa com riscado -->
           
           <div class="botoes">
-            <button (click)="editTarefa(i)">Editar</button>
-            <button (click)="removeTarefa(item)">Remover</button>
-            <input type="checkbox" [(ngModel)]="item.completed">
+            <button class= editar (click)="editTarefa(i)"></button>
+            <button class=excluir (click)="removeTarefa(item)"></button>
+            <label class="custom-checkbox">
+              <input type="checkbox" [(ngModel)]="item.completed">
+              <span class="checkmark"></span>
+          </label>          
           </div>
-
         </ng-template>
+        </div>
       </li>
     </ul>
     
